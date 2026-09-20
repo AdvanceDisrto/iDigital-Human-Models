@@ -1,0 +1,17 @@
+name: Character foundation smoke
+on:
+  pull_request:
+  push:
+    branches: [feat/orchestra-spotem-foundation-20260920]
+jobs:
+  character:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile Python
+        run: python -m compileall -q character tests
+      - name: Run unit and smoke tests
+        run: python -m unittest discover -s tests -v
