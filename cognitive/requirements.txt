@@ -1,0 +1,5 @@
+# Runtime and development reference dependencies; third-party licenses remain in force.
+fastapi>=0.110,<1
+uvicorn>=0.29,<1
+cryptography>=42,<47
+httpx>=0.27,<1
